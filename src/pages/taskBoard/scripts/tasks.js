@@ -1,38 +1,5 @@
 //Задача 2
 
-//ссылки
-//Настройка ссылки (задачи --> календарь)
-document.getElementById('tab__navigation__li-calendar-id').addEventListener('click', () => {
-    event.preventDefault();
-    window.location.href = "calendar.html";
-    document.getElementById('tab__navigation__li-calendar-id').setAttribute('class', 'active');
-    document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
-});
-
-//Настройка ссылки (календарь --> задачи)
-document.getElementById('tab__navigation__li-tasks-id').addEventListener('click', () => {
-    event.preventDefault();
-    window.location.href = "task-board.html";
-    document.getElementById('tab__navigation__li-tasks-id').setAttribute('class', 'active');
-    document.getElementById('tab__navigation__li-calendar-id').removeAttribute('class');
-});
-
-//Настройка ссылки (задачи --> канбан)
-document.getElementById('tab__navigation__li-kanban-id').addEventListener('click', () => {
-    event.preventDefault();
-    window.location.href = "task-description.html";
-    document.getElementById('tab__navigation__li-kanban-id').setAttribute('class', 'active');
-    document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
-});
-
-//Настройка ссылки (канбан --> задачи)
-document.getElementById('tab__navigation__li-kanban-id').addEventListener('click', () => {
-    event.preventDefault();
-    window.location.href = "task-description.html";
-    document.getElementById('tab__navigation__li-kanban-id').setAttribute('class', 'active');
-    document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
-});
-
 //добавление задачи
 let catData; 
 
@@ -62,7 +29,7 @@ const openTaskEditor = () => {
 
 //обработать форму добавления задачи и вывести задачу
 document.getElementById('form--task--itself').addEventListener('submit', () => {
-    event.preventDefault;
+    event.preventDefault();
     addTask();
 
     document.getElementById('form--task').style.display = 'none';
@@ -132,3 +99,15 @@ const displayTask = () => {
     newTaskInfo.appendChild(newTaskTag); 
 };
 
+//Задача 3
+//открыть детальную информацию по задаче 
+const taskDetails = () => {
+    let taskList = document.querySelectorAll('.task__block');
+    for (let i = 0; i < taskList.length; i++) {
+        taskList[i].addEventListener('click', () => {
+            window.location.href = "task-description.html";
+        });
+    }
+};
+
+taskDetails();
