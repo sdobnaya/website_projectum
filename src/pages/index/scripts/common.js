@@ -32,3 +32,21 @@ document.getElementById('tab__navigation__li-kanban-id').addEventListener('click
     document.getElementById('tab__navigation__li-kanban-id').setAttribute('class', 'active');
     document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
 });
+
+
+//Задача 4 
+//выбор существующего проекта
+
+const chooseTask = () => {
+    let taskList = document.querySelectorAll('.aprojects');
+    for (let i = 0; i < taskList.length; i++) {
+        taskList[i].addEventListener('click', () => {
+            window.location.href = "task-description.html";
+            let aprojectName = taskList[i].textContent;
+            localStorage.setItem('project-header', `${aprojectName}`)
+        });
+    }; 
+    document.getElementById('task--name__header').textContent = localStorage.getItem('project-header');    
+};
+
+chooseTask();
