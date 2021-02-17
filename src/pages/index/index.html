@@ -7,10 +7,10 @@
 </head>
 <body class="flex flex--center" > 
 	<!-- Регистрация в Прожектуме -->
-	<div class="form form--registration">
+	<div id="form--reg__id" class="form form--registration">
 		<img src="img/logo.svg" alt="" class="form__logo">
 
-		<form action="" method="">
+		<form id="form--reg--itself__id" action="" method="">
 			<label for="email">Электропочта</label>
 			<input type="email" id="email" placeholder="email@example.com" class="gap--bottom">
 
@@ -25,36 +25,36 @@
 		</form>
 		<div class="additional__info">
 			<p>Уже зарегистрированы?</p>
-			<a href="#">Войти в систему</a>
+			<a id="additional__info__login-link" href="#">Войти в систему</a>
 		</div>
 	</div>
 
 	<!-- Вход в Прожектум -->
-	<div class="form form--login" style="display: none">
+	<div id="form--log__id" class="form form--login" style="display: none">
 		<img src="img/logo.svg" alt="" class="form__logo">
 
-		<form action="" method="">
+		<form id="form--log--itself__id" action="" method="">
 			<label for="email">Электропочта</label>
-			<input type="email" id="email" placeholder="email@example.com" class="gap--bottom">
+			<input type="email" id="emaillog" placeholder="email@example.com" class="gap--bottom">
 
 			<label for="pass">Пароль</label>
-			<input type="password" id="pass" >
+			<input type="password" id="password" >
 
 			<input type="submit" value="Зарегистрироваться">
 
 		</form>
 		<div class="additional__info">
 			<p>Еще нет учётной записи? </p>
-			<a href="#">Зарегистироваться</a>
+			<a id="additional__info__reg-link"  href="#">Зарегистироваться</a>
 		</div>
 	</div>
 
 	<!-- Set Up -->
-	<div class="form form--setup" style="display: none">
+	<div id="form--set__id" class="form form--setup" style="display: none">
 		<img src="img/logo-small.svg"  class="logo--compressed" alt="">
 		<h1>Выберите команду</h1>
 
-		<form action="" method="">
+		<form id="form--set--itself__id" action="" method="">
 			<fieldset class="team__select__layout flex">
 				<label class="radiobtn__immitation" for="marketing">
 					<input type="radio" id="marketing" name="teamSelect">

@@ -89,9 +89,9 @@
 		</div>
 
 		<ul class="tab__navigation">
-			<li class="active"><a href="#">Задачи</a></li>
-			<li><a href="#">Канбан</a></li>
-			<li><a href="#">Календарь</a></li>
+			<li id="tab__navigation__li-tasks-id" class="active"><a href="#">Задачи</a></li>
+			<li id="tab__navigation__li-kanban-id"><a href="#">Канбан</a></li>
+			<li id="tab__navigation__li-calendar-id"><a id="tab__navigation__calendar-id" href="#">Календарь</a></li>
 		</ul>
 	</header>
 	
@@ -99,10 +99,10 @@
 	<!-- Для отображения досок с задачами заменить класс у элемента main на "flex kanban__block" -->
 	<main class="flex kanban__block">
 
-		<div class="column task__column">
+		<div id="task__column-backlog" class="column task__column">
 			<div class="item__header">
 				<h2 class="item__title">Беклог</h2>
-				<a href="#" class="item__btn">+ Добавить задачу</a>
+				<a id="item__btn__backlog" href="#" class="item__btn">+ Добавить задачу</a>
 			</div>
 
 			<a href="#" class="task task__block">
@@ -132,10 +132,10 @@
 			</a>
 		</div>
 
-		<div class="column task__column">
+		<div id="task__column-todo" class="column task__column">
 			<div class="item__header">
 				<h2 class="item__title">Выполнить</h2>
-				<a href="#" class="item__btn">+ Добавить задачу</a>
+				<a id="item__btn__todo" href="#" class="item__btn">+ Добавить задачу</a>
 			</div>
 
 			<a href="#" class="task task__block">
@@ -168,10 +168,10 @@
 			</a>
 		</div>
 
-		<div class="column task__column">
+		<div id="task__column-done" class="column task__column">
 			<div class="item__header">
 				<h2 class="item__title">Выполнено</h2>
-				<a href="#" class="item__btn">+ Добавить задачу</a>
+				<a id="item__btn__done" href="#" class="item__btn">+ Добавить задачу</a>
 			</div>
 
 			<a href="#" class="task task__block">
@@ -196,8 +196,8 @@
 		</div>
 
 		<!-- Добавить новую задачу -->
-		<div class="form form--task" style="display: none;">
-			<form action="" method="">
+		<div id="form--task" class="form form--task" style="display: none;">
+			<form id="form--task--itself" action="" method="">
 				<h2>Добавить новую задачу</h2>
 				<hr>
 

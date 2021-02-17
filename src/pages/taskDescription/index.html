@@ -89,9 +89,9 @@
 		</div>
 
 		<ul class="tab__navigation">
-			<li><a href="#">Задачи</a></li>
-			<li class="active"><a href="#">Канбан</a></li>
-			<li><a href="#">Календарь</a></li>
+			<li id="tab__navigation__li-tasks-id"><a href="#">Задачи</a></li>
+			<li id="tab__navigation__li-kanban-id" class="active"><a href="#">Канбан</a></li>
+			<li id="tab__navigation__li-calendar-id"><a href="#">Календарь</a></li>
 		</ul>
 
 		
@@ -101,7 +101,7 @@
 			<div>
 				<div class="item__header">
 					<h2 class="item__title">Беклог</h2>
-					<a href="#" class="item__btn">+ Добавить задачу</a>
+					<a id="item__btn__backlog" href="#" class="item__btn">+ Добавить задачу</a>
 				</div>
 
 				<a href="#" class="task task__block task--finished">
@@ -141,7 +141,7 @@
 			<div>
 				<div class="item__header">
 					<h2 class="item__title">Выполнить</h2>
-					<a href="#" class="item__btn">+ Добавить задачу</a>
+					<a id="item__btn__todo" href="#" class="item__btn">+ Добавить задачу</a>
 				</div>
 
 				<a href="#" class="task task__block task--active">
@@ -179,11 +179,11 @@
 			
 		</div>
 
-		<div class="task__desctiption task__desctiption__card">
+		<div id="task__desctiption__card-id" class="task__desctiption task__desctiption__card" style="display: none;">
 			<div class="task__desctiption__header">
 				<div class="item__header task task--finished">
 					<div>
-						<h2 class="item__title">Find top 5 customer requests</h2>
+						<h2 id="task__title-id" class="item__title">Find top 5 customer requests</h2>
 						<p class="author__list">Added by Kristin A. yesterday at 12:41pm</p>
 					</div>
 
@@ -216,7 +216,7 @@
 				</div>
 
 				<div class="task__desctiption__textarea">
-					<p>Описания задач используются при планировании проектов, исполнении проектов и контроле за ними. При планировании проекта описания задач используются для планирования объема работ и составления смет. Во время выполнения проекта описание задач используется теми, кто выполняет работы, чтобы обеспечить их правильное выполнение.</p>
+					<p id="task__desctiption__text-id">Описания задач используются при планировании проектов, исполнении проектов и контроле за ними. При планировании проекта описания задач используются для планирования объема работ и составления смет. Во время выполнения проекта описание задач используется теми, кто выполняет работы, чтобы обеспечить их правильное выполнение.</p>
 				</div>
 			</div>
 
@@ -227,13 +227,15 @@
 					<img src="img/icon/sort.svg" alt="">
 				</div>
 
-				<div class="comment__input__wrapp form flex">
-					<img src="img/userpic-big.jpg" class="comment__icon" alt="">
-					<input type="text" class="comment__input" placeholder="Добавить комментарий">
-					<input type="submit" class="comment__submit" value="Коментировать">
-				</div>
+				<form id="comment__input__form-id">
+					<div class="comment__input__wrapp form flex">
+						<img src="img/userpic-big.jpg" class="comment__icon" alt="">
+						<input id="comment__input-id" type="text" class="comment__input" placeholder="Добавить комментарий">
+						<input type="submit" class="comment__submit" value="Коментировать">
+					</div>
+				</form>
 
-				<div class="comment__history">
+				<div id="comment__history-id" class="comment__history">
 					<div class="commet comment__block">
 						<div class="commet__icon">
 							<img src="img/userpic-big.jpg" alt="">
