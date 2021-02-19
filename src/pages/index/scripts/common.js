@@ -43,10 +43,22 @@ const chooseTask = () => {
         taskList[i].addEventListener('click', () => {
             window.location.href = "task-description.html";
             let aprojectName = taskList[i].textContent;
-            localStorage.setItem('project-header', `${aprojectName}`)
+            localStorage.setItem('project-header', `${aprojectName}`);
         });
     }; 
     document.getElementById('task--name__header').textContent = localStorage.getItem('project-header');    
 };
 
 chooseTask();
+
+const chooseTeam = () => {
+    let teamList = document.querySelectorAll('.team__description');
+    for (let i = 0; i < teamList.length; i++) {
+        teamList[i].addEventListener('click', () => {
+            window.location.href = "team.html";
+
+        });
+    }; 
+};
+
+chooseTeam();
