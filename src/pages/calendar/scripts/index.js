@@ -1,5 +1,5 @@
 import '../../../css/style.scss';
 
-
-//Общее
+// Общее
 import '../../index/scripts/common'; 
+import '../../profileSettings/scripts/profileSettings';

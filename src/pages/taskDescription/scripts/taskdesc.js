@@ -1,6 +1,3 @@
-
-//Задача 3
-
 //Открыть детали задачи 
 const taskMoreDetails = () => {
     let taskList = document.querySelectorAll('.task__block');
@@ -15,7 +12,7 @@ taskMoreDetails();
 
 
 //Оставить комментарий и занести его в локальное хранилище 
-document.getElementById('comment__input__form-id').addEventListener('submit', () => {
+document.getElementById('comment__input__form-id').addEventListener('submit', (event) => {
     event.preventDefault();
     
     leaveComment();
@@ -50,8 +47,7 @@ const leaveComment = () => {
     newCommentWrap.appendChild(newCommentTextWrap);
 
     //Распаковываем локалСторидж для инфы о пользователе
-    let currentLogin = localStorage.getItem("login");
-    currentLogin = JSON.parse(currentLogin);
+    let currentLogin = JSON.parse(localStorage.getItem("login"));
 
     //Имя
     const newCommentName = document.createElement('p');
@@ -77,7 +73,9 @@ const leaveComment = () => {
     //Дата и Время коммента
     const newCommentDate = document.createElement('p');
     newCommentDate.setAttribute("class", "commet__date");
-    newCommentDate.textContent = 'Никогда-нибудь';
+    const dateNow = new Date().toLocaleDateString();
+    const timeNow = `${new Date().getHours()}:${new Date().getMinutes()}`;
+    newCommentDate.textContent = `${dateNow} ${timeNow}`;
     newCommentTextWrap.appendChild(newCommentDate);
 }; 
 
@@ -88,8 +86,7 @@ const addComment = () => {
     
     let text = document.getElementById('task__desctiption__text-id').textContent;
 
-    let allTasks = localStorage.getItem('tasks');
-    allTasks = JSON.parse(allTasks);
+    let allTasks = JSON.parse(localStorage.getItem('tasks'));
 
     allTasks.forEach((element) => {
         if (element.description === text){
