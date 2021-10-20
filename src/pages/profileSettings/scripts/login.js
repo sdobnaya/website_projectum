@@ -1,60 +1,10 @@
-
-//Задача 1
-
-//Формирование объекта для локального хранилища
 let credentials = {};
-//window.credentials = {};
 
-
-//1
-//Страница регистрации --> Зарегестрироваться 
-document.getElementById('form--reg--itself__id').addEventListener('submit', () => {
-    event.preventDefault();
-    validEmail('email');
-    validData();
-    if (credentials.email !== undefined && credentials.password !== undefined && credentials.name !== undefined) {
-        document.getElementById('form--reg__id').style.display = 'none';
-        document.getElementById('form--set__id').style.display = 'inline-block';
-    } 
-});
-
-//Страница выбора команды
-document.getElementById('form--set--itself__id').addEventListener('submit', () => {
-    event.preventDefault();
-    teamSetter();
-    formStorage();
-});
-
-//2
-//Страница регистрации --> Войти в систему 
-document.getElementById('additional__info__login-link').addEventListener('click', () => {
-    event.preventDefault();
-    document.getElementById('form--reg__id').style.display = 'none';
-    document.getElementById('form--log__id').style.display = 'inline-block';
-});
-
-//Войти в систему --> Страница регистрации 
-document.getElementById('additional__info__reg-link').addEventListener('click', () => {
-    event.preventDefault();
-    document.getElementById('form--reg__id').style.display = 'inline-block';
-    document.getElementById('form--log__id').style.display = 'none';
-});
-
-//Войти в систему --> Зарегестрироваться 
-document.getElementById('form--log--itself__id').addEventListener('submit', () => {
-    event.preventDefault();
-    validEmail('emaillog');
-    if (credentials.email !== undefined){
-        login();
-    }
-});
-
-
-//3 Всякие функции
-//Валидация почты
+// Всякие функции
+// Валидация почты
 const validEmail = (id) => {
-    event.preventDefault();
-    const email = document.getElementById(id).value;         
+    const email = document.getElementById(id).value;
+
     if (email.includes('@') && email.includes('.')) {
         credentials.email = email;                                                                 
     } else {
@@ -62,10 +12,10 @@ const validEmail = (id) => {
     }
 };
 
-//Валидация остальных данных
+// Валидация остальных данных
 const validData = () => {
-    event.preventDefault();
     const password = document.getElementById('pass').value;
+
     if (password.length >= 8){
         credentials.password = password;                                                           
     } else {
@@ -74,6 +24,7 @@ const validData = () => {
 
     const name = document.getElementById('user').value;
     const nameArr = name.split(' ');
+
     if (nameArr[0].length >= 3 && nameArr[1].length >= 3) {                                    
         credentials.name = name;                                                                   
     } else {
@@ -81,7 +32,7 @@ const validData = () => {
     }
 };
 
-//Выбор команды
+// Выбор команды
 const teamSetter = () => {
     const teamColl = document.querySelectorAll('input[name="teamSelect"]');
     teamColl.forEach((elem) => {
@@ -91,7 +42,7 @@ const teamSetter = () => {
     });
 };
 
-//Формируем локальное хранилище и проверяем, есть ли пользователь в базе
+// Формируем локальное хранилище и проверяем, есть ли пользователь в базе
 const formStorage = () => {
     if (localStorage.getItem("credentials")){
         const creden = localStorage.getItem("credentials");
@@ -102,6 +53,7 @@ const formStorage = () => {
                localCheck = true;
             } 
         });
+
         switch (localCheck){
             case true:
                 alert('Такой пользователь уже зарегестрирован');
@@ -114,6 +66,7 @@ const formStorage = () => {
                 window.location.href = "task-board.html";
                 break;
         }
+
     } else {
         localStorage.setItem('login', JSON.stringify(credentials));
         let initialStorage = [];
@@ -124,11 +77,12 @@ const formStorage = () => {
 };
 
 
-//Обработка логина
+// Обработка логина
 const login = () => {
     let CatchFlag = false;
     const creden = localStorage.getItem("credentials");
-    let serviceStorage = JSON.parse(creden);                   
+    let serviceStorage = JSON.parse(creden);   
+
     serviceStorage.forEach((element) => {
         if (element.email === credentials.email && element.password === document.getElementById('password').value){               
             CatchFlag = true;
@@ -136,11 +90,57 @@ const login = () => {
             window.location.href = "task-board.html";
         } 
     });
+
     if (CatchFlag === false) {
         alert('Неправильный логин или пароль');
         window.location.href = "index.html";
     };
 };
+
+
+// Страница регистрации --> Зарегестрироваться 
+document.getElementById('form--reg--itself__id').addEventListener('submit', (event) => {
+    event.preventDefault();
+    validEmail('email');
+    validData();
+    if (credentials.email !== undefined && credentials.password !== undefined && credentials.name !== undefined) {
+        document.getElementById('form--reg__id').style.display = 'none';
+        document.getElementById('form--set__id').style.display = 'inline-block';
+    } 
+});
+
+// Страница выбора команды
+document.getElementById('form--set--itself__id').addEventListener('submit', (event) => {
+    event.preventDefault();
+    teamSetter();
+    formStorage();
+});
+
+// Страница регистрации --> Войти в систему 
+document.getElementById('additional__info__login-link').addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById('form--reg__id').style.display = 'none';
+    document.getElementById('form--log__id').style.display = 'inline-block';
+});
+
+// Войти в систему --> Страница регистрации 
+document.getElementById('additional__info__reg-link').addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById('form--reg__id').style.display = 'inline-block';
+    document.getElementById('form--log__id').style.display = 'none';
+});
+
+// Войти в систему --> Зарегестрироваться 
+document.getElementById('form--log--itself__id').addEventListener('submit', (event) => {
+    event.preventDefault();
+    validEmail('emaillog');
+    if (credentials.email !== undefined){
+        login();
+    }
+});
+
+
+
 
 
 

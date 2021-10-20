@@ -1,8 +1,8 @@
 import '../../../css/style.scss';
 
-
-//Страница логина и регистрации
 import '../../profileSettings/scripts/login'; 
+import './common';
+import './common_team';
 
 
 

@@ -1,42 +1,33 @@
-//Задача 2
-
-//ссылки
-//Настройка ссылки (задачи --> календарь)
+// Ссылки
+// (задачи --> календарь)
 document.getElementById('tab__navigation__li-calendar-id').addEventListener('click', () => {
-    event.preventDefault();
     window.location.href = "calendar.html";
     document.getElementById('tab__navigation__li-calendar-id').setAttribute('class', 'active');
     document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
 });
 
-//Настройка ссылки (календарь --> задачи)
+// (календарь --> задачи)
 document.getElementById('tab__navigation__li-tasks-id').addEventListener('click', () => {
-    event.preventDefault();
     window.location.href = "task-board.html";
     document.getElementById('tab__navigation__li-tasks-id').setAttribute('class', 'active');
     document.getElementById('tab__navigation__li-calendar-id').removeAttribute('class');
 });
 
-//Настройка ссылки (задачи --> канбан)
+// (задачи --> канбан)
 document.getElementById('tab__navigation__li-kanban-id').addEventListener('click', () => {
-    event.preventDefault();
     window.location.href = "task-description.html";
     document.getElementById('tab__navigation__li-kanban-id').setAttribute('class', 'active');
     document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
 });
 
-//Настройка ссылки (канбан --> задачи)
+// (канбан --> задачи)
 document.getElementById('tab__navigation__li-kanban-id').addEventListener('click', () => {
-    event.preventDefault();
     window.location.href = "task-description.html";
     document.getElementById('tab__navigation__li-kanban-id').setAttribute('class', 'active');
     document.getElementById('tab__navigation__li-tasks-id').removeAttribute('class');
 });
 
-
-//Задача 4 
-//выбор существующего проекта
-
+// Выбор существующего проекта
 const chooseTask = () => {
     let taskList = document.querySelectorAll('.aprojects');
     for (let i = 0; i < taskList.length; i++) {

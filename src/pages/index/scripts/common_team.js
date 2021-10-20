@@ -1,8 +1,4 @@
-
-
-//Задача 4 
-//выбор существующего проекта
-
+// Выбор существующего проекта
 const chooseTask = () => {
     let taskList = document.querySelectorAll('.aprojects');
     for (let i = 0; i < taskList.length; i++) {
@@ -17,8 +13,7 @@ const chooseTask = () => {
 
 chooseTask();
 
-//Задача 6
-//Отобразить членов команды
+// Отобразить членов команды
 const displayTeam = () => {
     const wrapper = document.getElementById('members__card__wrapper--id');
     wrapper.innerHTML = '';
@@ -67,13 +62,13 @@ const displayTeam = () => {
 
 //Выбрать команду
 const chooseTeam = () => {
-    const teamList = document.querySelectorAll('.team__description');  //let
+    const teamList = document.querySelectorAll('.team__description');
 
     for (let i = 0; i < teamList.length; i++) {
         teamList[i].addEventListener('click', () => {
             window.location.href = "team.html";
-            let teamName = teamList[i].textContent;    //let
-            teamName = teamName.trim();   //Вылезает пробелы кратные количеству итераций - не понимаю откуда
+            let teamName = teamList[i].textContent;
+            teamName = teamName.trim();
             localStorage.setItem('teamName', `${teamName}`);
         });
     }; 
@@ -101,33 +96,3 @@ const chooseTeam = () => {
 };
 
 chooseTeam();
-
-
-
-
-
-
-
-/*const chooseTeam = () => {
-    const teamList = document.querySelectorAll('.team__description');  //let
-
-    for (let i = 0; i < teamList.length; i++) {
-        teamList[i].addEventListener('click', () => {
-            window.location.href = "team.html";
-            const teamName = teamList[i].textContent;    //let
-            localStorage.setItem('teamName', `${teamName}`);
-        });
-    }; 
-    document.getElementById('task--name__header').textContent = localStorage.getItem('teamName');  
-    let a = localStorage.getItem('teamName') 
-    if (localStorage.getItem('teamName') === 'Дизайнеры'){
-        let thisTeam = document.querySelectorAll('.team__design');
-        localStorage.setItem('teamMembers', JSON.stringify(thisTeam.length));
-        //window.try = thisTeam;
-        document.getElementById('members__count--id').textContent = thisTeam.length;
-    };
-};
-
-chooseTeam();
-
-*/

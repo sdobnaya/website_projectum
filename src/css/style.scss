@@ -957,12 +957,32 @@ main {
             color: #ED6400;
         }
 
+        &.sales {
+            background: #FFF1E2;
+            color: #ED6400;
+        }
+
         &.marketing {
             background: #F5F0FF;
             color: #764CED;
         }
 
         &.design {
+            background: #E3EFFF;
+            color: #1975D0;
+        }
+
+        &.frontend {
+            background: #FFF1E2;
+            color: #ED6400;
+        }
+
+        &.backend {
+            background: #F5F0FF;
+            color: #764CED;
+        }
+
+        &.finance {
             background: #E3EFFF;
             color: #1975D0;
         }
