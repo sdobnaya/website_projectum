@@ -1,4 +1,3 @@
-# Lectrum JS personal prjects
 
 
 ### Installation
