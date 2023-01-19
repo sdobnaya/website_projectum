@@ -1,25 +1,22 @@
+# Website (JS/SCSS/HTML)
 
+A website for "Projectum" that implements the logic of a personal account for the team and teamwork. You can add tasks and leave comments.
 
-### Installation
+To run this on your PC you need to do the following:
 
-```
-npm install
-```
+1.  Clone the repo:
 
-### Start Dev Server
+        git clone https://github.com/sdobnaya/website_projectum.git
 
-```
-npm start
-```
+2.  Install dependencies using:
 
-### Build Prod Version
+       ```
+        npm install
+       ```
 
-```
-npm run build
-```
+3.  Run:
 
-### Features:
-
-* ES6 Support via [babel](https://babeljs.io/) (v7)
-* SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
-* Linting via [eslint-loader](https://github.com/MoOx/eslint-loader)
+       ```
+        npm start
+       ```
+       
